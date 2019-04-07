@@ -13,7 +13,7 @@
 
    <div class="form-group">
     <%= label f, :manager %>
-    <%= select f, :manager, Enum.map(Tasks2.Users.list_users, fn x -> {x.email, x.id} end) %>
+    <%= select f, :manager, [0 | Enum.map(Tasks2.Users.list_users, fn x -> {x.email} end)] %>
     <%= error_tag f, :manager %>
   </div>
 
